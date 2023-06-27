@@ -4,6 +4,7 @@
  * Return: The number of characters printed.
  */
 #include <stdio.h>
+#include "main.h"
 int _print_num(int n)
 {
     int numPrintedChars = 0;

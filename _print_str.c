@@ -4,6 +4,7 @@
  * Return: The number of characters printed.
  */
 #include <stdio.h>
+#include "main.h"
 int _print_str(char *s)
 {
     int numPrintedChars = 0;
