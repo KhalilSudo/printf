@@ -14,7 +14,7 @@ int _print_num(int n)
         if (n < 0)
         {
                 /* Handle negative numbers */
-                _putchar('-');
+                
                 n = -n;
                 numPrintedChars++;
         }
