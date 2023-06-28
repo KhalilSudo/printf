@@ -11,21 +11,31 @@ int _print_num(int n)
 {
         int numPrintedChars = 0;
 
-        if (n < 0)
+        if (n == INT_MIN)
         {
-                /* Handle negative numbers */
+                /* Handle INT_MIN */
                 
-                n = -n;
-                numPrintedChars++;
+                numPrintedChars += _putchar('-');
+                numPrintedChars += _print_num(-(n / 10));
+                numPrintedChars += _putchar('8');
         }
-
-        if (n / 10)
+        else
         {
-                numPrintedChars += _print_num(n / 10);
-        }
+                if (n < 0)
+                {
+                        /* Handle negative numbers */
+                
+                        n = -n;
+                        numPrintedChars += _putchar('-');
+                }
 
-        _putchar((n % 10) + '0');
-        numPrintedChars++;
+                if (n / 10)
+                {
+                        numPrintedChars += _print_num(n / 10);
+                }
+
+                numPrintedChars += _putchar((n % 10) + '0');
+        }
 
         return (numPrintedChars);
 }
