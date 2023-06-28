@@ -22,6 +22,12 @@ int _printf(const char *format, ...)
         if (*format == '%')
         {
             format++;
+            if (*format == '\0')
+            {
+                _putchar('%');
+                numberPrintedChars++;
+                break;
+            }
             switch (*format)
             {
                 case 'd':
@@ -41,7 +47,7 @@ int _printf(const char *format, ...)
                 case 's':
                 {
                     char *val = va_arg(args, char*);
-                    numberPrintedChars += _print_str(val);
+                    numberPrintedChars += _print_str(val == NULL ? "(null)" : val);
                     break;
                 }
                 case '%':
