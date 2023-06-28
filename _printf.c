@@ -2,7 +2,6 @@
 #include <stdarg.h>
 #include "main.h"
 
-
 /**
  * _printf - Printf function
  * @format: format.
@@ -18,46 +17,52 @@ int _printf(const char *format, ...)
 
     va_start(args, format);
 
-    while (*format != '\0') {
-        if (*format == '%') {
+    while (*format != '\0')
+    {
+        if (*format == '%')
+        {
             format++;
             switch (*format)
             {
-            case 'd':
-            case 'i':
+                case 'd':
+                case 'i':
                 {
                     int val = va_arg(args, int);
                     numberPrintedChars += _print_num(val);
                     break;
                 }
-            case 'c':
+                case 'c':
                 {
                     int val = va_arg(args, int);
                     _putchar(val);
                     numberPrintedChars++;
                     break;
                 }
-            case 's':
+                case 's':
                 {
-                    char* val = va_arg(args, char*);
+                    char *val = va_arg(args, char*);
                     numberPrintedChars += _print_str(val);
                     break;
                 }
-            case '%':
+                case '%':
                 {
                     _putchar('%');
                     numberPrintedChars++;
                     break;
                 }
-            default:
-                _putchar('%');
-                _putchar(*format);
-                numberPrintedChars += 2;
+                default:
+                {
+                    _putchar('%');
+                    _putchar(*format);
+                    numberPrintedChars += 2;
+                }
             }
-        } else {
-        _putchar(*format);
-        numberPrintedChars++;
-}
+        }
+        else
+        {
+            _putchar(*format);
+            numberPrintedChars++;
+        }
         format++;
     }
 
@@ -65,4 +70,3 @@ int _printf(const char *format, ...)
 
     return numberPrintedChars;
 }
-

@@ -5,8 +5,8 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int _print_number(int n);
-int _print_string(char *s);
+int _print_num(int n);
+int _print_str(char *s);
 int _putchar(char c);
 
 
