@@ -22,14 +22,14 @@ int _printf(const char *format, ...)
         if (*format == '%' && *format++ != '\0')
         {
             format++;
-        
-            switch (*format)
+            if (*format == '\0')
             {
-                case '\0':
-                 _putchar('%');
+                _putchar('%');
                 numberPrintedChars++;
                 break;
-
+            }
+            switch (*format)
+            {
                 case 'd':
                 case 'i':
                 {
