@@ -25,6 +25,10 @@ int _printf(const char *format, ...)
         
             switch (*format)
             {
+                case '\0':
+                 _putchar('%');
+                numberPrintedChars++;
+                break;
 
                 case 'd':
                 case 'i':
