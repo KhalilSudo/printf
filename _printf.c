@@ -22,6 +22,13 @@ int _printf(const char *format, ...)
         if (*format == '%')
         {
             format++;
+
+            if (*format == '\0')
+            {
+            _putchar('%');
+            numberPrintedChars++;
+            return numberPrintedChars;
+            }
         
             switch (*format)
             {
@@ -62,7 +69,9 @@ int _printf(const char *format, ...)
                 }
                 default:
                 {
-                  
+                   _putchar('%');
+                    _putchar(*format);
+                    numberPrintedChars += 2; 
                 }
             }
         }
