@@ -47,7 +47,11 @@ int _printf(const char *format, ...)
                 case 's':
                 {
                     char *val = va_arg(args, char*);
-                    numberPrintedChars += _print_str(val == NULL ? "(null)" : val);
+                    if(val == NULL)
+                    {
+                        val = "(null)";
+                    }
+                    numberPrintedChars += _print_str(val);
                     break;
                 }
                 case '%':
