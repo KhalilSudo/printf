@@ -19,16 +19,9 @@ int _printf(const char *format, ...)
 
     while (*format != '\0')
     {
-        if (*format == '%')
+        if (*format == '%' && *format++ != '\0')
         {
             format++;
-
-            if (*format == '\0')
-            {
-            _putchar('%');
-            numberPrintedChars++;
-            return numberPrintedChars;
-            }
         
             switch (*format)
             {
