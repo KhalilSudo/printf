@@ -28,13 +28,7 @@ int _printf(const char *format, ...)
                 numberPrintedChars++;
                 break;
             }
-            if (*format == '%')
-            {
-                _putchar('%');
-                numberPrintedChars++;
-                format++; 
-                continue; 
-            }
+          
             switch (*format)
             {
                 case 'd':
